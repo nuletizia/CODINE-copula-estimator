@@ -268,7 +268,7 @@ class CODINE():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--batch_size', help='Number of data samples to train on at once', default=256)
-    parser.add_argument('--epochs', help='Number of epochs to train for', default=500)
+    parser.add_argument('--epochs', help='Number of epochs to train for', default=5000)
     parser.add_argument('--test_size', help='Number of data samples for testing', default=10000)
     parser.add_argument('--test_batch', help='Number average estimators', default=10)
     parser.add_argument('--divergence', help='f-divergence measure', default='GAN')
