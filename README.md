@@ -7,7 +7,7 @@ Copula Density Neural Estimation - under submission
 
 If you use the repository for your experiments, please cite the paper.
 
-<img src="https://github.com/nuletizia/MIND-neural-decoder/blob/main/teaser_arch.jpg" width=800>
+<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_gaussian.jpg" width=800>
 
 
 The paper presents a density estimation method based on the copula, denoted as CODINE.
@@ -20,7 +20,7 @@ CODINE is a neural network trained to estimate the copula density (and thus the 
 
 The codes available in the repository are developed for the Gaussian copula density estimation and for the 2d toy-example. It can be extended to any data using the transform sampling functions available in the latter.
 
-<img src="https://github.com/nuletizia/MIND-neural-decoder/blob/main/teaser.png" width=800>
+<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_toy.jpg" width=800>
 
 Three divergence options are available to train your own CODINE model:
 - KL (Kullback-Leibler)
