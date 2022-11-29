@@ -3,9 +3,9 @@ Copula density neural estimation
 
 This repository contains the official implementation of the following paper:
 
-Copula Density Neural Estimation - under submission
+Copula Density Neural Estimation
 
-If you use the repository for your experiments, please cite the paper.
+If you use the repository for your experiments, please cite the paper: http://arxiv.org/abs/2211.15353
 
 <img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_toy.jpg" width=400>
 
