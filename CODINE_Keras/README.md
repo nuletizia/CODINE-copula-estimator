@@ -2,21 +2,15 @@
   
 # CODINE: Copula Density Neural Estimator
 
-</div>
-
 This folder contains the official **Keras** implementation of the paper.
 
----
-
-# 📈 Results from our paper
-
-The codes available in the repository are developed for the Gaussian copula density estimation and for the 2d toy-example. It can be extended to any data using the transform sampling functions available in the latter.
-
-<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_gaussian.jpg" width=400>
+</div>
 
 ---
 
 # 💻 How to run the code
+
+The codes available in the repository are developed for the Gaussian copula density estimation and for the 2d toy-example. It can be extended to any data using the transform sampling functions available in the latter.
 
 Three divergence options are available to train your own CODINE model:
 - KL (Kullback-Leibler)
@@ -26,7 +20,7 @@ Three divergence options are available to train your own CODINE model:
 To train and test CODINE on the Gaussian copula (AWGN channel, it estimates the copula density of the output y), use the following command
 > python CODINE_Gaussian.py
 
-To change the f-divergence, use the following command
+To change the $f$-divergence, use the following command
 > python CODINE_Gaussian.py --divergence GAN
 
 To change the dimension of the output (and so the dimension of the copula density), and the noise correlation coefficient, use the following command
