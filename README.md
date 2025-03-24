@@ -1,13 +1,29 @@
-# CODINE-copula-estimator
-Copula density neural estimation
+<div align="center">
+  
+# CODINE: Copula Density Neural Estimator
 
-This repository contains the official implementation of the following paper:
+</div>
 
-Copula Density Neural Estimation
+Official repository of the paper "Copula Density Neural Estimation".
 
-If you use the repository for your experiments, please cite the paper: http://arxiv.org/abs/2211.15353
+> CODINE ...
+
+
+---
+
+# 📈 Important results from our paper
 
 <img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_toy.jpg" width=400>
+
+---
+
+# 💻 How to run the code
+
+(see subfolders...)
+
+---
+
+## 🤓 General description
 
 The paper presents a density estimation method based on the copula, denoted as CODINE.
 CODINE is a neural network trained to estimate the copula density (and thus the pdf) associated to any data. By design, it works with pseudo-observations (data in the uniform probability space). It can be used for:
@@ -17,26 +33,29 @@ CODINE is a neural network trained to estimate the copula density (and thus the 
 - Data generation
 - More..
 
-The codes available in the repository are developed for the Gaussian copula density estimation and for the 2d toy-example. It can be extended to any data using the transform sampling functions available in the latter.
+---
 
-<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_gaussian.jpg" width=400>
+## 📝 References 
 
-Three divergence options are available to train your own CODINE model:
-- KL (Kullback-Leibler)
-- GAN (Generative adversarial network discriminative distance)
-- HD (Hellinger distance)
+If you use the code for your research, please cite our paper:
+```
+@article{letizia2022copula,
+  title={Copula density neural estimation},
+  author={Letizia, Nunzio A and Tonello, Andrea M},
+  journal={arXiv preprint arXiv:2211.15353},
+  year={2022}
+}
+```
+## 📋 Acknowledgments
 
-To train and test CODINE on the Gaussian copula (AWGN channel, it estimates the copula density of the output y), use the following command
-> python CODINE_Gaussian.py
+The implementation is based on / inspired by:
 
-To change the f-divergence, use the following command
-> python CODINE_Gaussian.py --divergence GAN
+- [https://github.com/tonellolab/fDIME](https://github.com/tonellolab/fDIME)
 
-To change the dimension of the output (and so the dimension of the copula density), and the noise correlation coefficient, use the following command
-> python CODINE_Gaussian.py --latent_dim 2 --rho 0.5
+---
 
-Training and testing parameters such as training epochs, batch and test sizes can be given as input
-> python CODINE_Gaussian.py --epochs 500 --batch_size 32 --test_size 10000
+## 📧 Contact
 
-To train and test CODINE on the 2d toy example, use the following command (arguments can be added as in the Gaussian case)
-> python CODINE_Toy.py
+[nunzio.letizia@aau.at](nunzio.letizia@aau.at)
+
+[nicola.novello@aau.at](nicola.novello@aau.at)
