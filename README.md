@@ -6,7 +6,7 @@
 
 Official repository of the paper "Copula Density Neural Estimation".
 
-> CODINE ...
+> CODINE is a neural copula density estimator that estimates any copula density by maximizing a variational lower bound on the $f$-divergence.
 
 <div align="center">
 
@@ -31,7 +31,7 @@ Official repository of the paper "Copula Density Neural Estimation".
 
 ## 🤓 General description
 
-The paper presents a density estimation method based on the copula, denoted as CODINE.
+The paper presents a copula density estimation method, denoted as CODINE.
 CODINE is a neural network trained to estimate the copula density (and thus the pdf) associated to any data. By design, it works with pseudo-observations (data in the uniform probability space). It can be used for:
 - Density estimation
 - Dependence measures
