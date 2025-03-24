@@ -4,7 +4,7 @@
 
 </div>
 
-This folder contains the official Keras implementation of the paper.
+This folder contains the official **Keras** implementation of the paper.
 
 ---
 
