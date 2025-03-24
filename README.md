@@ -8,6 +8,12 @@ Official repository of the paper "Copula Density Neural Estimation".
 
 > CODINE ...
 
+<div align="center">
+
+[![license](https://img.shields.io/badge/License-MIT-red.svg)](https://github.com/nicolaNovello/CODINE-copula-estimator/blob/main/LICENSE)
+[![Hits](https://hits.sh/github.com/nicolaNovello/CODINE-copula-estimator.svg?label=Visitors&color=30a704)](https://hits.sh/github.com/nicolaNovello/CODINE-copula-estimator/)
+
+</div>
 
 ---
 
