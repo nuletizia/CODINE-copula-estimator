@@ -2,6 +2,8 @@
   
 # CODINE: Copula Density Neural Estimator
 
+[Nunzio A. Letizia](https://scholar.google.com/citations?user=v50jRAIAAAAJ&hl=en), [Nicola Novello](https://scholar.google.com/citations?user=4PPM0GkAAAAJ&hl=en), [Andrea M. Tonello](https://scholar.google.com/citations?user=qBiseEsAAAAJ&hl=en)<br />
+
 </div>
 
 Official repository of the paper "Copula Density Neural Estimation".
@@ -19,7 +21,16 @@ Official repository of the paper "Copula Density Neural Estimation".
 
 # 📈 Important results from our paper
 
+## Copula density estimation
+
 <img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_toy.jpg" width=400>
+
+<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_gaussian.jpg" width=400>
+
+## Mutual information estimation
+
+## Data generation
+
 
 ---
 
