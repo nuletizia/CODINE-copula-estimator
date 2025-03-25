@@ -23,6 +23,8 @@ Official repository of the paper "Copula Density Neural Estimation".
 
 ## Copula density estimation
 
+The main purpose of CODINE is to estimate the copula density... 
+
 <img src="Figures/teaser_gaussian.jpg" width=600/>
 
 <img src="Figures/teaser_toy.jpg" width=600/>
