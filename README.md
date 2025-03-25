@@ -23,13 +23,25 @@ Official repository of the paper "Copula Density Neural Estimation".
 
 ## Copula density estimation
 
-<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_toy.jpg" width=400>
+<img src="Figures/teaser_gaussian.jpg" width=600/>
 
-<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_gaussian.jpg" width=400>
+<img src="Figures/teaser_toy.jpg" width=600/>
+
+<img src="Figures/teaser_MoG.png"/>
 
 ## Mutual information estimation
 
+<img src="Figures/teaser_MI_gauss.jpg" width=600/>
+
+<img src="Figures/teaser_MI_asinh.jpg" width=600/>
+
 ## Data generation
+
+<img src="Figures/teaser_digits_generation.jpg" width=600/>
+
+<img src="Figures/teaser_fashion_random.jpg" width=600/>
+
+<img src="Figures/teaser_fashion_dims.jpg" width=600/>
 
 
 ---
