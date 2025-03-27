@@ -21,27 +21,53 @@ Official repository of the paper "Copula Density Neural Estimation".
 
 # 📈 Important results from our paper
 
+Please refer to the paper to have a precise description of all the results.
+
 ## Copula density estimation
 
-The main purpose of CODINE is to estimate the copula density... 
+The main purpose of CODINE is to estimate the copula density. In the following, we present three results of copula density estimation in three different settings.
+
+### Gaussian
 
 <img src="Figures/teaser_gaussian.jpg" width=600/>
 
+### Toy scenario
+
 <img src="Figures/teaser_toy.jpg" width=600/>
+
+### Mixture of Gaussians
 
 <img src="Figures/teaser_MoG.png"/>
 
 ## Mutual information estimation
 
+CODINE can be adapted to be used as a MI estimator.
+
+### Gaussian
+
 <img src="Figures/teaser_MI_gauss.jpg" width=600/>
+
+### Gaussian with asinh transformation
 
 <img src="Figures/teaser_MI_asinh.jpg" width=600/>
 
 ## Data generation
 
+Once the copula density is estimated using CODINE, we show how to generate data sampling the estimated copula with Gibbs sampling.
+
+### MNIST digits
+
+We show the generated digits and the architecture of the decoder we use for generation.
+
 <img src="Figures/teaser_digits_generation.jpg" width=600/>
 
+### FashionMNIST
+
+Since the data is generated using a decoder, we compare the data generated feeding the decoder with the sampling of CODINE's estimated copula (referred to as codine generation) and a random sampling of a uniform distribution (random generation). 
+
 <img src="Figures/teaser_fashion_random.jpg" width=600/>
+
+We compare the generation using different dimensions of the latent space.
 
 <img src="Figures/teaser_fashion_dims.jpg" width=600/>
 
@@ -50,7 +76,9 @@ The main purpose of CODINE is to estimate the copula density...
 
 # 💻 How to run the code
 
-(see subfolders...)
+Depending on your preferred library for neural implementatins, please refer to the corresponding folder:
+- `CODINE_Keras` when using Keras (for a fast shortcut, click [here](https://github.com/nicolaNovello/CODINE-copula-estimator/tree/main/CODINE_Keras))
+- `CODINE_PyTorch` when using PyTorch (for a fast shortcut, click [here](https://github.com/nicolaNovello/CODINE-copula-estimator/tree/main/CODINE_PyTorch))
 
 ---
 
@@ -62,7 +90,15 @@ CODINE is a neural network trained to estimate the copula density (and thus the 
 - Dependence measures
 - Mutual information estimation
 - Data generation
-- More..
+- More...
+
+The copula density is estimated by maximizing the following objective function with respect to $T$:
+
+$$\mathcal{J}_ {f}(T) = \mathbb{E}_ {\mathbf{u} \sim c_{U}(\mathbf{u})}\biggl[T\bigl(\mathbf{u}\bigr)\biggr] - \mathbb{E}_ {\mathbf{u} \sim \pi_{U}(\mathbf{u})}\biggl[f^*\biggl(T\bigl(\mathbf{u}\bigr)\biggr)\biggr] ,$$
+
+where $c_U$ is the copula density and $\pi_ {U}$ is a multivariate uniform density. Given the optimal $\hat{T}$ that maximizes $\mathcal{J}_ {f}(T)$, the copula estimate is obtained as
+
+$$c_U(\mathbf{u}) = \bigl(f^{*}\bigr)^{\prime} \bigl(\hat{T}(\mathbf{u})\bigr).$$
 
 ---
 
