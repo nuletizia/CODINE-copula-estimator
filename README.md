@@ -1,42 +1,128 @@
-# CODINE-copula-estimator
-Copula density neural estimation
+<div align="center">
+  
+# CODINE: Copula Density Neural Estimator
 
-This repository contains the official implementation of the following paper:
+[Nunzio A. Letizia](https://scholar.google.com/citations?user=v50jRAIAAAAJ&hl=en), [Nicola Novello](https://scholar.google.com/citations?user=4PPM0GkAAAAJ&hl=en), [Andrea M. Tonello](https://scholar.google.com/citations?user=qBiseEsAAAAJ&hl=en)<br />
 
-Copula Density Neural Estimation
+</div>
 
-If you use the repository for your experiments, please cite the paper: http://arxiv.org/abs/2211.15353
+Official repository of the paper "Copula Density Neural Estimation".
 
-<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_toy.jpg" width=400>
+> CODINE is a neural copula density estimator that estimates any copula density by maximizing a variational lower bound on the $f$-divergence.
 
-The paper presents a density estimation method based on the copula, denoted as CODINE.
+<div align="center">
+
+[![license](https://img.shields.io/badge/License-MIT-red.svg)](https://github.com/nicolaNovello/CODINE-copula-estimator/blob/main/LICENSE)
+[![Hits](https://hits.sh/github.com/nicolaNovello/CODINE-copula-estimator.svg?label=Visitors&color=30a704)](https://hits.sh/github.com/nicolaNovello/CODINE-copula-estimator/)
+
+</div>
+
+---
+
+# 📈 Important results from our paper
+
+Please refer to the paper to have a precise description of all the results.
+
+## Copula density estimation
+
+The main purpose of CODINE is to estimate the copula density. In the following, we present three results of copula density estimation in three different settings.
+
+### Gaussian
+
+<img src="Figures/teaser_gaussian.jpg" width=600/>
+
+### Toy scenario
+
+<img src="Figures/teaser_toy.jpg" width=600/>
+
+### Mixture of Gaussians
+
+<img src="Figures/teaser_MoG.png"/>
+
+## Mutual information estimation
+
+CODINE can be adapted to be used as a MI estimator.
+
+### Gaussian
+
+<img src="Figures/teaser_MI_gauss.jpg" width=600/>
+
+### Gaussian with asinh transformation
+
+<img src="Figures/teaser_MI_asinh.jpg" width=600/>
+
+## Data generation
+
+Once the copula density is estimated using CODINE, we show how to generate data sampling the estimated copula with Gibbs sampling.
+
+### MNIST digits
+
+We show the generated digits and the architecture of the decoder we use for generation.
+
+<img src="Figures/teaser_digits_generation.jpg" width=600/>
+
+### FashionMNIST
+
+Since the data is generated using a decoder, we compare the data generated feeding the decoder with the sampling of CODINE's estimated copula (referred to as codine generation) and a random sampling of a uniform distribution (random generation). 
+
+<img src="Figures/teaser_fashion_random.jpg" width=600/>
+
+We compare the generation using different dimensions of the latent space.
+
+<img src="Figures/teaser_fashion_dims.jpg" width=600/>
+
+
+---
+
+# 💻 How to run the code
+
+Depending on your preferred library for neural implementatins, please refer to the corresponding folder:
+- `CODINE_Keras` when using Keras (for a fast shortcut, click [here](https://github.com/nicolaNovello/CODINE-copula-estimator/tree/main/CODINE_Keras))
+- `CODINE_PyTorch` when using PyTorch (for a fast shortcut, click [here](https://github.com/nicolaNovello/CODINE-copula-estimator/tree/main/CODINE_PyTorch))
+
+---
+
+## 🤓 General description
+
+The paper presents a copula density estimation method, denoted as CODINE.
 CODINE is a neural network trained to estimate the copula density (and thus the pdf) associated to any data. By design, it works with pseudo-observations (data in the uniform probability space). It can be used for:
 - Density estimation
 - Dependence measures
 - Mutual information estimation
 - Data generation
-- More..
+- More...
 
-The codes available in the repository are developed for the Gaussian copula density estimation and for the 2d toy-example. It can be extended to any data using the transform sampling functions available in the latter.
+The copula density is estimated by maximizing the following objective function with respect to $T$:
 
-<img src="https://github.com/nuletizia/CODINE-copula-estimator/blob/main/teaser_gaussian.jpg" width=400>
+$$\mathcal{J}_ {f}(T) = \mathbb{E}_ {\mathbf{u} \sim c_{U}(\mathbf{u})}\biggl[T\bigl(\mathbf{u}\bigr)\biggr] - \mathbb{E}_ {\mathbf{u} \sim \pi_{U}(\mathbf{u})}\biggl[f^*\biggl(T\bigl(\mathbf{u}\bigr)\biggr)\biggr] ,$$
 
-Three divergence options are available to train your own CODINE model:
-- KL (Kullback-Leibler)
-- GAN (Generative adversarial network discriminative distance)
-- HD (Hellinger distance)
+where $c_U$ is the copula density and $\pi_ {U}$ is a multivariate uniform density. Given the optimal $\hat{T}$ that maximizes $\mathcal{J}_ {f}(T)$, the copula estimate is obtained as
 
-To train and test CODINE on the Gaussian copula (AWGN channel, it estimates the copula density of the output y), use the following command
-> python CODINE_Gaussian.py
+$$c_U(\mathbf{u}) = \bigl(f^{*}\bigr)^{\prime} \bigl(\hat{T}(\mathbf{u})\bigr).$$
 
-To change the f-divergence, use the following command
-> python CODINE_Gaussian.py --divergence GAN
+---
 
-To change the dimension of the output (and so the dimension of the copula density), and the noise correlation coefficient, use the following command
-> python CODINE_Gaussian.py --latent_dim 2 --rho 0.5
+## 📝 References 
 
-Training and testing parameters such as training epochs, batch and test sizes can be given as input
-> python CODINE_Gaussian.py --epochs 500 --batch_size 32 --test_size 10000
+If you use the code for your research, please cite our paper:
+```
+@article{letizia2022copula,
+  title={Copula density neural estimation},
+  author={Letizia, Nunzio A and Tonello, Andrea M},
+  journal={arXiv preprint arXiv:2211.15353},
+  year={2022}
+}
+```
+## 📋 Acknowledgments
 
-To train and test CODINE on the 2d toy example, use the following command (arguments can be added as in the Gaussian case)
-> python CODINE_Toy.py
+The implementation is based on / inspired by:
+
+- [https://github.com/tonellolab/fDIME](https://github.com/tonellolab/fDIME)
+
+---
+
+## 📧 Contact
+
+[nunzio.letizia@aau.at](nunzio.letizia@aau.at)
+
+[nicola.novello@aau.at](nicola.novello@aau.at)
