@@ -105,12 +105,13 @@ $$c_U(\mathbf{u}) = \bigl(f^{*}\bigr)^{\prime} \bigl(\hat{T}(\mathbf{u})\bigr).$
 ## 📝 References 
 
 If you use the code for your research, please cite our paper:
-```
-@article{letizia2022copula,
+```bibtex
+@article{letizia2025copula,
   title={Copula density neural estimation},
-  author={Letizia, Nunzio A and Tonello, Andrea M},
-  journal={arXiv preprint arXiv:2211.15353},
-  year={2022}
+  author={Letizia, Nunzio A and Novello, Nicola and Tonello, Andrea M},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  year={2025},
+  publisher={IEEE}
 }
 ```
 ## 📋 Acknowledgments
